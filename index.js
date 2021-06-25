@@ -82,19 +82,14 @@ function playGame (questionNumber, question, answer) {
 
 function getValue() {
   var questionNumber = 0;
-
-  for(let i = 0; i < questionList.length; i++) {
+  if(username) {
+    for(let i = 0; i < questionList.length; i++) {
     questionNumber++;
     let myQuestion = questionList[i];
     playGame(questionNumber, myQuestion.question, myQuestion.answer);
   }
-}
 
-getValue();
-console.log('--------------');
-
-//giving badges
-if (score >= 7) {
+  if (score >= 7) {
   console.log('Wow! You truely know me.')
 } else if (score <= 6 && score >= 4) {
   console.log('Ah! You know me but little.');
@@ -104,4 +99,15 @@ if (score >= 7) {
 
 console.log('--');
 console.log(`Your score is ${score}. Well Played!`);
+
+  } else {
+    console.log('But Before Playing, Please enter your name.')
+  }
+}
+
+getValue();
+console.log('--------------');
+
+//giving badges
+
 
