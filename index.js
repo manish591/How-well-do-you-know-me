@@ -65,6 +65,15 @@ let questionList = [
   
 ]
 
+const highScores = [{
+  name: "Manish",
+  score: 10,
+},
+{
+  name: "Suraj",
+  score: 8,
+}];
+
 
 function playGame (questionNumber, question, answer) {
 
@@ -99,6 +108,10 @@ function getValue() {
 
 console.log('--');
 console.log(`Your score is ${score}. Well Played!`);
+console.log('--------------');
+for(let j = 0; j < highScores.length; j++) {
+  console.log(`High scores by ${highScores[j].name} is ${highScores[j].score}.`)
+}
 
   } else {
     console.log('But Before Playing, Please enter your name.')
