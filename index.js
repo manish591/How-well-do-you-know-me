@@ -1,4 +1,5 @@
 const readLineSync = require('readline-sync');
+const chalk = require('chalk');
 
 //score update
 var score = 0;
@@ -14,53 +15,83 @@ console.log('--------------');
 //question list
 let questionList = [
   {
-    question: 'Where do I live?',
-    answer: 'uttarakhand'
+    question: `Where do I live?
+  a. Jaipur
+  b. Uttarakhand
+  c. Amritsar`,
+    answer: 'b'
   },
 
   {
-    question: 'What is my favorite color?',
-    answer: 'black'
+    question: `What is my favorite color?
+  a. Black
+  b. Green
+  c. Blue`,
+    answer: 'a'
   },
 
   {
-    question: 'Who is my favorite sportsperson?',
-    answer: 'virat kohli'
+    question: `Who is my favorite sportsperson?
+  a. Virat Kohli
+  b. James Anderson
+  c. Manika Batra`,
+    answer: 'a'
   },
 
   {
-    question: 'What is my favorite sport?',
-    answer: 'cricket'
+    question: `What is my favorite sport?
+  a. Table Tennis
+  b. Cricket
+  c. Football`,
+    answer: 'b'
   },
 
   {
-    question: 'What is my favorite food?',
-    answer: 'paneer tikka'
+    question: `What is my favorite food?
+  a. Poha
+  b. Dosa
+  c. Paneer Tikka`,
+    answer: 'c'
   },
 
   {
-    question: 'Messi versus Ronaldo?',
-    answer: 'messi'
+    question: `Messi versus Ronaldo?
+  a. Messi
+  b. Ronaldo
+  c. No One`,
+    answer: 'a'
   },
 
   {
-    question: 'Which programming language I like the most?',
-    answer: 'javascript'
+    question: `Which programming language I like the most?
+  a. Javascript
+  b. Python
+  c. PHP`,
+    answer: 'a'
   },
 
   {
-    question: 'Which book genre I like the most?',
-    answer: 'fiction'
+    question: `Which book genre I like the most?
+  a. Business
+  b. Programming
+  c. Fiction`,
+    answer: 'c'
   },
 
   {
-    question: 'My favorite Season?',
-    answer: 'winter'
+    question: `My favorite Season?
+  a. Summer
+  b. Winter
+  c. Rainy  `,
+    answer: 'b'
   },
 
   {
-    question: 'Favorite IPL Team?',
-    answer: 'rcb'
+    question: `Favorite IPL Team?
+  a. RCB
+  b. MI
+  c. RR  `,
+    answer: 'a'
   }
   
 ]
@@ -81,10 +112,10 @@ function playGame (questionNumber, question, answer) {
   let userAnswer = readLineSync.question('Write your answer here: ');
 
   if(userAnswer.toLowerCase() === answer) {
-    console.log('You are right');
+    console.log(chalk.green('You are right'));
     score++;
   } else {
-    console.log('You are wrong!')
+    console.log(chalk.red('You are wrong!'))
   }
   console.log('--------------');
 }
@@ -107,7 +138,7 @@ function getValue() {
 }
 
 console.log('--');
-console.log(`Your score is ${score}. Well Played!`);
+console.log(chalk.cyan(`Your score is ${score}. Well Played!`));
 console.log('--------------');
 for(let j = 0; j < highScores.length; j++) {
   console.log(`High scores by ${highScores[j].name} is ${highScores[j].score}.`)
