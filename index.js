@@ -117,6 +117,7 @@ function playGame (questionNumber, question, answer) {
   } else {
     console.log(chalk.red('You are wrong!'))
   }
+  console.log(chalk.blue(`Your current score is ${score}.`))
   console.log('--------------');
 }
 
@@ -138,7 +139,7 @@ function getValue() {
 }
 
 console.log('--');
-console.log(chalk.cyan(`Your score is ${score}. Well Played!`));
+console.log(chalk.cyan(`Your final score is ${score}. Well Played!`));
 console.log('--------------');
 for(let j = 0; j < highScores.length; j++) {
   console.log(`High scores by ${highScores[j].name} is ${highScores[j].score}.`)
